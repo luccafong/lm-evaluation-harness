@@ -595,6 +595,7 @@ def evaluate(
     WORLD_SIZE = lm.world_size
     ### Postprocess outputs ###
     # TODO: del model here, maybe (idea: allow user to specify device of e.g. reward model separately)
+    # if WORLD_SIZE > 1
     for task_output, limit in zip(eval_tasks, limits):
         task = task_output.task
         task.apply_filters()

@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Union
 
 
+
 def try_parse_json(value: str) -> Union[str, dict, None]:
     if value is None:
         return None
@@ -533,4 +534,6 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
 
 
 if __name__ == "__main__":
+    import os
+    print(f"world size {os.environ.get('WORLD_SIZE')}, rank: {os.environ.get('RANK')}")
     cli_evaluate()
